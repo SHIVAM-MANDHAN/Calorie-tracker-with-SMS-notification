@@ -4,8 +4,8 @@ import requests
 from datetime import datetime
 from pytz import timezone
 
-API_KEY = "fb43373674421094c57cf40ca4d21e9d"
-APP_ID = "15fed0ab"
+API_KEY = "XXXXXXXXXX"
+APP_ID = "XXXXXXXXXX"
 URL = "https://trackapi.nutritionix.com/v2/natural/nutrients"
 
 user = input("What you ate: ")
@@ -55,17 +55,17 @@ for i in range(len(response.json()["foods"])):
 
 
 
-    adding_data = requests.post(url="https://api.sheety.co/e4751299a9f39f63c1cdbce09b2494ca/calorieChart/sheet1", json=sheet_inputs)
+    adding_data = requests.post(url="https://api.sheety.co/XXXXXXXXXX/XXXXXXXXXX/XXXXXXXXXX", json=sheet_inputs)
     print(adding_data.raise_for_status())
 
 # Using Twilio API to get SMS notification (to be run on PyhtonAnywhere)
 
 from twilio.rest import Client
-account_sid = 'AC1b48c5e2f34193851256f4c128ddd0d8'
-auth_token = '5c8a29cbea78341c9a595f250f8da740'
+account_sid = 'XXXXXXXXXX'
+auth_token = 'XXXXXXXXXX'
 
 
-getting_data = requests.get(url="https://api.sheety.co/e4751299a9f39f63c1cdbce09b2494ca/calorieChart/sheet3")
+getting_data = requests.get(url="https://api.sheety.co/XXXXXXXXXX/XXXXXXXXXX/XXXXXXXXXX")
 sheet_data = getting_data.json()
 print(sheet_data)
 
@@ -80,7 +80,7 @@ for i in sheet_data["sheet3"]:
         message = client.messages \
             .create(
             body=f">\n\n Your total calorie consumption for today is {total}Kcal",
-            from_='+19855311870',
-            to='+917909830971'
+            from_='XXXXXXXXXX',
+            to='XXXXXXXXXX'
         )
         print(message.status)
